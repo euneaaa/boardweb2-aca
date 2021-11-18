@@ -17,6 +17,7 @@
             border: 1px solid black;
         }
         td {text-align: center;
+            padding: 3px 15px 3px 15px;
         }
     </style>
 </head>

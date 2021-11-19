@@ -40,6 +40,7 @@ public class BoardWriteServlet extends HttpServlet {
                 break;
             case 0:
                 req.setAttribute("err", "글 등록에 실패하였습니다.");
+                req.setAttribute("errdata", board);
                 doGet(req,res);
                 break;
         }

@@ -1,3 +1,4 @@
+<%@ page import="com.koreait.board2.model.BoardVO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String err = (String) request.getAttribute("err");
@@ -16,9 +17,9 @@
     <%}%>
     <div>
         <form action="/board/write" method="post">
-            <div><input type="text" name="title" placeholder="title"></div>
+            <div><input type="text" name="title" placeholder="title" value="${requestScope.errdata.title}"></div>
             <div>
-                <textarea name="ctnt" placeholder="content"></textarea>
+                <textarea name="ctnt" placeholder="content">${requestScope.errdata.ctnt}</textarea>
             </div>
             <div>
                 <input type="submit" value="등록">

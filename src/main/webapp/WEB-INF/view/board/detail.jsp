@@ -4,6 +4,7 @@
 <%
     BoardVO vo = (BoardVO) request.getAttribute("detail");
     UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -17,7 +18,7 @@
 <body>
     <h1><%=vo.getTitle()%></h1>
     <div>
-        <a href="/board/list"><input type="button" value="리스트로 돌아가기"></a>
+        <a href="/board/list?page=${sessionScope.listpage}"><input type="button" value="리스트로 돌아가기"></a>
     </div>
     <% if(loginUser != null && loginUser.getIuser()==vo.getWriter()){%>
         <a href="/board/mod?iboard=<%=vo.getIboard()%>"><input type="button" value="수정"></a>
